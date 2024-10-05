@@ -47,26 +47,53 @@ function Background() {
           <div className="mt-6 rounded-full flex justify-around items-center bg-[#D9D9D9]/25 w-44 cursor-pointer text-white text-md font-sans p-1">
             Get in Touch <Arrow />
           </div>
-          <div className="flex justify-between items-center">
-            <div className="mt-28 flex flex-row gap-2">
+          <div className="flex justify-between items-center mt-44">
+            <div className="flex flex-row gap-2 relative">
               {/* Horizontal lines with soft transition */}
-              <div
-                className={`w-32 h-0.5 transition-all duration-500 ${
-                  activeBackground === 0 ? "bg-[#CDDC6E]" : "bg-[#CDCDCD]/25"
-                }`}
-              ></div>
-              <div
-                className={`w-32 h-0.5 transition-all duration-500 ${
-                  activeBackground === 1 ? "bg-[#CDDC6E]" : "bg-[#CDCDCD]/25"
-                }`}
-              ></div>
-              <div
-                className={`w-32 h-0.5 transition-all duration-500 ${
-                  activeBackground === 2 ? "bg-[#CDDC6E]" : "bg-[#CDCDCD]/25"
-                }`}
-              ></div>
+              <div className="relative">
+                <div
+                  className={`w-32 h-0.5 transition-all duration-500 ${
+                    activeBackground === 0 ? "bg-[#CDDC6E]" : "bg-[#CDCDCD]/25"
+                  }`}
+                ></div>
+                <span
+                  className={`absolute left-0 top-2 text-xl transition-opacity ${
+                    activeBackground === 0 ? "text-[#CDDC6E]" : "opacity-0"
+                  }`}
+                >
+                  01
+                </span>
+              </div>
+              <div className="relative">
+                <div
+                  className={`w-32 h-0.5 transition-all duration-500 ${
+                    activeBackground === 1 ? "bg-[#CDDC6E]" : "bg-[#CDCDCD]/25"
+                  }`}
+                ></div>
+                <span
+                  className={`absolute left-0 top-2 text-xl transition-opacity ${
+                    activeBackground === 1 ? "text-[#CDDC6E]" : "opacity-0"
+                  }`}
+                >
+                  02
+                </span>
+              </div>
+              <div className="relative">
+                <div
+                  className={`w-32 h-0.5 transition-all duration-500 ${
+                    activeBackground === 2 ? "bg-[#CDDC6E]" : "bg-[#CDCDCD]/25"
+                  }`}
+                ></div>
+                <span
+                  className={`absolute left-0 top-2 text-xl transition-opacity ${
+                    activeBackground === 2 ? "text-[#CDDC6E]" : "opacity-0"
+                  }`}
+                >
+                  03
+                </span>
+              </div>
             </div>
-            <div className="font-sans text-md w-2/5 mt-28 text-white">
+            <div className="font-sans text-md w-2/5 flex items-center text-white">
               As the Sundarbans face severe flooding, women bear the brunt,
               losing livelihoods and access to resources.
             </div>
@@ -98,4 +125,5 @@ function Arrow() {
     </div>
   );
 }
+
 export default Background;
