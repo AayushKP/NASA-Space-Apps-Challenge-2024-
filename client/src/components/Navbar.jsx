@@ -9,7 +9,7 @@ function Navbar() {
     setActiveButton(button);
   };
   return (
-    <div className="m-9 p-2 flex items-center h-20  justify-between relative">
+    <div className="mb-9 mt-9 mr-9 p-2 flex items-center h-20  justify-between relative">
       <div className="h-16 w-32 ">
         <img
           src="src/assets/images/Logo.png"
@@ -35,7 +35,7 @@ function Navbar() {
               className="rounded-full h-7 w-auto ml-1"
             />
           </div>
-          <div className="text-md">Home</div>
+          <div className="text-md font-sans">Home</div>
         </div>
 
         <div
@@ -54,12 +54,12 @@ function Navbar() {
               className="rounded-full h-7 w-auto ml-1"
             />
           </div>
-          <div className="text-md">News</div>
+          <div className="text-md font-sans">News</div>
         </div>
 
         <div
           onClick={() => {
-            handleButtonClick("news");
+            handleButtonClick("ananlysis");
             navigate("/analysis");
           }}
           className={`w-32 h-10 rounded-full cursor-pointer text-black border-none flex items-center gap-3 p-1 ${
@@ -73,15 +73,15 @@ function Navbar() {
               className="rounded-full h-7 w-auto ml-1"
             />
           </div>
-          <div className="text-md">Analysis</div>
+          <div className="text-md font-sans">Analysis</div>
         </div>
       </div>
 
       <div className="flex items-center gap-4">
-        <div className="w-32 h-10 rounded-full cursor-pointer text-white border border-[#D9D9D9] flex justify-center items-center text-sm">
+        <div className="w-32 h-10 font-sans rounded-full cursor-pointer text-white border border-[#D9D9D9] flex justify-center items-center text-sm">
           Learn More
         </div>
-        <div className="text-sm w-32 h-10 rounded-full cursor-pointer text-white border border-[#D9D9D9] flex justify-center items-center">
+        <div className="text-sm font-sans w-32 h-10 rounded-full cursor-pointer text-white border border-[#D9D9D9] flex justify-center items-center">
           Contact Us
         </div>
       </div>
