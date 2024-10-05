@@ -1,22 +1,20 @@
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Navbar from "../components/Navbar";
+
 function Home() {
+  
+
   return (
     <div className="h-screen w-screen bg-[#1E1E1E] relative">
       <div className="h-screen w-screen">
         <img
-          src="src/assets/images/Hero.png"
+          src="src/assets/images/background.png"
           className="w-full h-full object-cover"
-          alt="Hero"
+          alt="background"
         />
         <div className="absolute inset-0 z-10">
-          <div className=" m-10 p-3 flex items-center h-20 border border-red-800">
-            <div className=" h-16 w-32 ">
-              <img
-                src="src/assets/images/Logo.png"
-                alt=""
-                className="object-cover"
-              />
-            </div>
-          </div>
+          <Navbar />
         </div>
       </div>
     </div>
