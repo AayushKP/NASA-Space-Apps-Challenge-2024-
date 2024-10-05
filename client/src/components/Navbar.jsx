@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Navbar() {
-  const [activeButton, setActiveButton] = useState("home");
+  const [activeButton, setActiveButton] = useState(null);
   const navigate = useNavigate();
 
   const handleButtonClick = (button) => {
