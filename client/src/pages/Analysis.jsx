@@ -1,4 +1,4 @@
 function Analysis() {
-  return <div>Analysis</div>;
+  return <div className="h-screen w-screen"></div>;
 }
 export default Analysis;

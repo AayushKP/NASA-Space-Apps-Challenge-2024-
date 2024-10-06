@@ -1,7 +1,7 @@
 import Navbar from "../components/Navbar";
 import React, { useState, useEffect } from "react";
 
-function Background() {
+function Background({ heroText }) {
   const backgrounds = [
     "src/assets/images/background1.png",
     "src/assets/images/background2.png",
@@ -26,11 +26,15 @@ function Background() {
   return (
     <div className="h-screen w-screen bg-[#1E1E1E] relative">
       <div className="h-screen w-screen">
-        <img
-          src={backgrounds[activeBackground]} // Set the active background
-          className="w-full h-full object-cover transition-opacity duration-1000 ease-in-out" // 1-second soft transition
-          alt="background"
-        />
+        <div className="w-full h-full">
+          <img
+            src={backgrounds[activeBackground]} // Set the active background
+            className="w-full h-full object-cover transition-opacity duration-1000 ease-in-out" // 1-second soft transition
+            alt="background"
+          />
+          <div className="absolute inset-0 rounded-xl bg-gradient-to-b from-transparent via-transparent to-[#121212] opacity-30 pointer-events-none"></div>
+        </div>
+
         <div className="absolute inset-0 z-10 ml-9">
           <Navbar />
           <div className="mt-28 p-2">
@@ -94,8 +98,7 @@ function Background() {
               </div>
             </div>
             <div className="font-sans text-md w-2/5 flex items-center text-white">
-              As the Sundarbans face severe flooding, women bear the brunt,
-              losing livelihoods and access to resources.
+              {heroText}
             </div>
           </div>
         </div>
