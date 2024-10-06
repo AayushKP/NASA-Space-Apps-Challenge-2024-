@@ -2,8 +2,8 @@ import { useState } from "react";
 import { IoHomeOutline } from "react-icons/io5";
 import Background from "../components/Background";
 import Policiescard from "../components/Policiescard";
-import Sessionscheduler from "../components/Sessionscheduler";
 import Discussion from "../components/Discussion";
+import SessionManager from "../components/SessionManager";
 
 function Community() {
   const [activeTab, setActiveTab] = useState("Community");
@@ -202,7 +202,7 @@ function CommunityContent() {
 function LiveSessions() {
   return (
     <div className="bg-[#121212] font-sans m-9 overflow-hidden">
-      <Sessionscheduler />
+      <SessionManager />
     </div>
   );
 }
