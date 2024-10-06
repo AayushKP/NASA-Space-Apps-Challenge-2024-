@@ -3,6 +3,7 @@ import { IoHomeOutline } from "react-icons/io5";
 import Background from "../components/Background";
 import Policiescard from "../components/Policiescard";
 import Sessionscheduler from "../components/Sessionscheduler";
+import Discussion from "../components/Discussion";
 
 function Analysis() {
   const [activeTab, setActiveTab] = useState("Community");
@@ -34,24 +35,24 @@ function Analysis() {
           heading: "Inclusive Climate Adaptation Planning",
           points: [
             "Ensure the active participation of women in local decision-making bodies related to climate adaptation and disaster management.",
-            "Provide gender-balanced representation in environmental councils and community planning committees to ensure diverse perspectives in tackling climate change impacts."
-          ]
+            "Provide gender-balanced representation in environmental councils and community planning committees to ensure diverse perspectives in tackling climate change impacts.",
+          ],
         },
         {
           heading: "Empowerment Through Education and Training",
           points: [
             "Implement training programs specifically designed for women in the Sundarbans, focusing on sustainable agriculture, eco-friendly livelihoods, and disaster preparedness.",
-            "Encourage skill development in alternative income-generating activities like sustainable fishing, handicrafts, or eco-tourism for women affected by climate hazards."
-          ]
+            "Encourage skill development in alternative income-generating activities like sustainable fishing, handicrafts, or eco-tourism for women affected by climate hazards.",
+          ],
         },
         {
           heading: "Resource Accessibility and Ownership Rights",
           points: [
             "Promote policies ensuring women have equal access to natural resources (e.g., land, water) and property rights to enhance their resilience to climate change impacts.",
-            "Facilitate women's participation in community-based natural resource management initiatives."
-          ]
-        }
-      ]
+            "Facilitate women's participation in community-based natural resource management initiatives.",
+          ],
+        },
+      ],
     },
     {
       title: "Addressing Climate Impact on Gender Inequality in the Sundarbans",
@@ -62,44 +63,22 @@ function Analysis() {
           heading: "Economic Empowerment",
           points: [
             "Promote women-led cooperatives in sustainable farming and agro-processing industries.",
-            "Provide subsidies and low-interest loans to women entrepreneurs in climate-sensitive sectors."
-          ]
+            "Provide subsidies and low-interest loans to women entrepreneurs in climate-sensitive sectors.",
+          ],
         },
         {
           heading: "Education and Training",
           points: [
             "Offer specialized training programs in climate-resilient farming techniques and renewable energy.",
-            "Focus on improving women’s access to climate change education and participation in environmental advocacy."
-          ]
+            "Focus on improving women’s access to climate change education and participation in environmental advocacy.",
+          ],
         },
-        {
-          heading: "Economic Empowerment",
-          points: [
-            "Promote women-led cooperatives in sustainable farming and agro-processing industries.",
-            "Provide subsidies and low-interest loans to women entrepreneurs in climate-sensitive sectors."
-          ]
-        },
-        {
-          heading: "Economic Empowerment",
-          points: [
-            "Promote women-led cooperatives in sustainable farming and agro-processing industries.",
-            "Provide subsidies and low-interest loans to women entrepreneurs in climate-sensitive sectors."
-          ]
-        },
-        {
-          heading: "Economic Empowerment",
-          points: [
-            "Promote women-led cooperatives in sustainable farming and agro-processing industries.",
-            "Provide subsidies and low-interest loans to women entrepreneurs in climate-sensitive sectors."
-          ]
-        },
-      ]
-    }
-    
+      ],
+    },
   ];
 
   return (
-    <div className="bg-[#121212]">
+    <div className="bg-[#121212] overflow-hidden">
       <General
         title={getTitle()}
         activeTab={activeTab}
@@ -192,15 +171,19 @@ function General({ title, activeTab, handleTabClick }) {
           </div>
         </div>
 
-        <div className="flex items-center justify-end mr-9 w-auto p-3 h-auto">
+        <div className="flex items-center justify-end mr-9 w-auto p-3 h-auto overflow-hidden">
           <div className="text-9xl font-semibold text-white">
             <span className="text-[#CDDC6E]">{title.first}</span> {title.second}
           </div>
         </div>
       </div>
 
-      <div className="m-9 mb-10">
-        <img src="src/assets/images/sessionImg.png" alt="" className="" />
+      <div className="m-9 mb-10 overflow-hidden">
+        <img
+          src="src/assets/images/sessionImg.png"
+          alt=""
+          className="w-full h-auto object-cover"
+        />
       </div>
     </div>
   );
@@ -208,36 +191,40 @@ function General({ title, activeTab, handleTabClick }) {
 
 // Placeholder content for Community tab
 function CommunityContent() {
-  return <div>Welcome to the Community section!</div>;
+  return (
+    <div>
+      <Discussion />
+    </div>
+  );
 }
 
 // Placeholder content for Live Sessions tab
 function LiveSessions() {
   return (
-    <div className="bg-[#121212] font-sans m-9 ">
-      
-        <Sessionscheduler />
+    <div className="bg-[#121212] font-sans m-9 overflow-hidden">
+      <Sessionscheduler />
     </div>
   );
 }
 
 // Placeholder content for Policies tab
 function Policies() {
-  return <div>
-    <Policiescard />
-    </div>;
-  
+  return (
+    <div>
+      <Policiescard />
+    </div>
+  );
 }
 
 function SessionCards({ img, title, text }) {
   return (
-    <div className="w-1/3 h-full rounded-xl">
+    <div className="w-1/3 h-full rounded-xl overflow-hidden">
       <img
         src="src/assets/images/session1.img"
         alt=""
-        className="absolute object-fit"
+        className="w-full h-auto object-cover"
       />
-      <div className="flex flex-col nset-0 z-10"></div>
+      <div className="flex flex-col inset-0 z-10"></div>
     </div>
   );
 }
