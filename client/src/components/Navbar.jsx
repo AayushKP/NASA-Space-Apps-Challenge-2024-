@@ -59,7 +59,7 @@ function Navbar() {
 
         <div
           onClick={() => {
-            handleButtonClick("ananlysis");
+            handleButtonClick("analysis");
             navigate("/analysis");
           }}
           className={`w-32 h-10 rounded-full cursor-pointer text-black border-none flex items-center gap-3 p-1 ${
