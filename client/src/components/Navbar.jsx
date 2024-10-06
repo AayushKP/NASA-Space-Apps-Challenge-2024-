@@ -1,16 +1,34 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 function Navbar() {
   const [activeButton, setActiveButton] = useState(null);
   const navigate = useNavigate();
+  const location = useLocation(); // To keep track of the current route
+
+  useEffect(() => {
+    // Set active button based on current path
+    const path = location.pathname.substring(1); // Get current path without leading '/'
+    setActiveButton(path || "home"); // Default to 'home' if path is empty
+  }, [location]);
 
   const handleButtonClick = (button) => {
-    setActiveButton(button);
+    navigate(button === "home" ? "/" : `/${button}`); // Navigate based on the button clicked
   };
+
+  const buttons = [
+    { label: "Home", icon: "src/assets/images/icon-nav-1.png", key: "home" },
+    { label: "News", icon: "src/assets/images/icon-nav-2.png", key: "news" },
+    {
+      label: "Analysis",
+      icon: "src/assets/images/icon-nav-3.png",
+      key: "analysis",
+    },
+  ];
+
   return (
-    <div className="mb-9 mt-9 mr-9 p-2 flex items-center h-20  justify-between relative">
-      <div className="h-16 w-32 ">
+    <div className="mb-9 mt-9 mr-9 p-2 flex items-center h-20 justify-between relative">
+      <div className="h-16 w-32">
         <img
           src="src/assets/images/Logo.png"
           alt="Logo"
@@ -19,73 +37,33 @@ function Navbar() {
       </div>
 
       <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 flex gap-6">
-        <div
-          onClick={() => {
-            handleButtonClick("home");
-            navigate("/");
-          }}
-          className={`w-32 h-10 rounded-full cursor-pointer text-black border-none flex items-center gap-3 p-1 ${
-            activeButton === "home" ? "bg-[#c9b230]" : "bg-[#D9D9D9]/50"
-          }`}
-        >
-          <div>
+        {buttons.map(({ label, icon, key }) => (
+          <div
+            key={key}
+            onClick={() => handleButtonClick(key)}
+            className={`w-32 h-10 rounded-full cursor-pointer flex items-center gap-3 p-1 transition-all duration-200 ${
+              activeButton === key
+                ? "bg-[#c9b230] text-black"
+                : "bg-[#D9D9D9]/50 text-black"
+            } hover:bg-[#c9b230] hover:text-black`}
+          >
             <img
-              src="src/assets/images/icon-nav-1.png"
-              alt=""
+              src={icon}
+              alt={`${label} icon`}
               className="rounded-full h-7 w-auto ml-1"
             />
+            <div className="text-md font-sans">{label}</div>
           </div>
-          <div className="text-md font-sans">Home</div>
-        </div>
-
-        <div
-          onClick={() => {
-            handleButtonClick("news");
-            navigate("/news");
-          }}
-          className={`w-32 h-10 rounded-full cursor-pointer text-black border-none flex items-center gap-3 p-1 ${
-            activeButton === "news" ? "bg-[#c9b230]" : "bg-[#D9D9D9]/50"
-          }`}
-        >
-          <div>
-            <img
-              src="src/assets/images/icon-nav-2.png"
-              alt=""
-              className="rounded-full h-7 w-auto ml-1"
-            />
-          </div>
-          <div className="text-md font-sans">News</div>
-        </div>
-
-        <div
-          onClick={() => {
-            handleButtonClick("analysis");
-            navigate("/analysis");
-          }}
-          className={`w-32 h-10 rounded-full cursor-pointer text-black border-none flex items-center gap-3 p-1 ${
-            activeButton === "analysis" ? "bg-[#c9b230]" : "bg-[#D9D9D9]/50"
-          }`}
-        >
-          <div>
-            <img
-              src="src/assets/images/icon-nav-3.png"
-              alt=""
-              className="rounded-full h-7 w-auto ml-1"
-            />
-          </div>
-          <div className="text-md font-sans">Analysis</div>
-        </div>
+        ))}
       </div>
 
       <div className="flex items-center gap-4">
-        <div className="w-32 h-10 font-sans rounded-full cursor-pointer text-white border border-[#D9D9D9] flex justify-center items-center text-sm">
+        <div className="w-32 h-10 font-sans rounded-full cursor-pointer bg-[#D9D9D9] text-black flex justify-center items-center text-sm transition-all duration-200 hover:bg-[#c9b230]">
           Learn More
         </div>
         <div
-          className="text-sm font-sans w-32 h-10 rounded-full cursor-pointer text-white border border-[#D9D9D9] flex justify-center items-center"
-          onClick={() => {
-            navigate("/community");
-          }}
+          className="w-32 h-10 font-sans rounded-full cursor-pointer text-white border border-[#D9D9D9] flex justify-center items-center transition-all duration-200 hover:bg-[#c9b230]"
+          onClick={() => navigate("/community")}
         >
           Community
         </div>
@@ -93,4 +71,5 @@ function Navbar() {
     </div>
   );
 }
+
 export default Navbar;

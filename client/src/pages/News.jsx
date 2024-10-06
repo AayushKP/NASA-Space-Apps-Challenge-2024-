@@ -59,6 +59,12 @@ const News = () => {
           />
         ))}
       </div>
+      <div className="flex justify-center items-center">
+        <img src="src/assets/images/dataImg.png" alt="" className="" />
+      </div>
+      <div className="flex justify-center items-center mt-3 mb-9">
+        <img src="src/assets/images/dataImg2.png" alt="" className="" />
+      </div>
     </div>
   );
 };
