@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { IoHomeOutline } from "react-icons/io5";
 import Background from "../components/Background";
+import Discussion from "../components/Discussion";
 
 function Analysis() {
   const [activeTab, setActiveTab] = useState("Community");
@@ -120,7 +121,11 @@ function General({ title, activeTab, handleTabClick }) {
 
 // Placeholder content for Community tab
 function CommunityContent() {
-  return <div>Welcome to the Community section!</div>;
+  return (
+    <div>
+      <Discussion />
+    </div>
+  );
 }
 
 // Placeholder content for Live Sessions tab
