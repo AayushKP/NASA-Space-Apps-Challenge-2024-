@@ -97,7 +97,7 @@ function Background({ heroText }) {
                 </span>
               </div>
             </div>
-            <div className="font-sans text-md w-2/5 flex items-center text-white">
+            <div className="font-sans text-md w-2/5 mr-9 flex items-center text-white">
               {heroText}
             </div>
           </div>
