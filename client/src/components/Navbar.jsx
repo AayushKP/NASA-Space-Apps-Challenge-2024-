@@ -81,8 +81,13 @@ function Navbar() {
         <div className="w-32 h-10 font-sans rounded-full cursor-pointer text-white border border-[#D9D9D9] flex justify-center items-center text-sm">
           Learn More
         </div>
-        <div className="text-sm font-sans w-32 h-10 rounded-full cursor-pointer text-white border border-[#D9D9D9] flex justify-center items-center">
-          Contact Us
+        <div
+          className="text-sm font-sans w-32 h-10 rounded-full cursor-pointer text-white border border-[#D9D9D9] flex justify-center items-center"
+          onClick={() => {
+            navigate("/community");
+          }}
+        >
+          Community
         </div>
       </div>
     </div>
