@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { IoHomeOutline } from "react-icons/io5";
 import Background from "../components/Background";
-import Discussion from "../components/Discussion";
+import Policiescard from "../components/Policiescard";
+import Sessionscheduler from "../components/Sessionscheduler";
 
 function Analysis() {
   const [activeTab, setActiveTab] = useState("Community");
@@ -23,6 +24,80 @@ function Analysis() {
     }
   };
 
+  const policiesDataArray = [
+    {
+      title: "Addressing Climate Impact on Gender Inequality in the Sundarbans",
+      organization: "SCGAN",
+      ministry: "MoEFCC",
+      policyFramework: [
+        {
+          heading: "Inclusive Climate Adaptation Planning",
+          points: [
+            "Ensure the active participation of women in local decision-making bodies related to climate adaptation and disaster management.",
+            "Provide gender-balanced representation in environmental councils and community planning committees to ensure diverse perspectives in tackling climate change impacts."
+          ]
+        },
+        {
+          heading: "Empowerment Through Education and Training",
+          points: [
+            "Implement training programs specifically designed for women in the Sundarbans, focusing on sustainable agriculture, eco-friendly livelihoods, and disaster preparedness.",
+            "Encourage skill development in alternative income-generating activities like sustainable fishing, handicrafts, or eco-tourism for women affected by climate hazards."
+          ]
+        },
+        {
+          heading: "Resource Accessibility and Ownership Rights",
+          points: [
+            "Promote policies ensuring women have equal access to natural resources (e.g., land, water) and property rights to enhance their resilience to climate change impacts.",
+            "Facilitate women's participation in community-based natural resource management initiatives."
+          ]
+        }
+      ]
+    },
+    {
+      title: "Addressing Climate Impact on Gender Inequality in the Sundarbans",
+      organization: "GENDREC",
+      ministry: "MoEFCC",
+      policyFramework: [
+        {
+          heading: "Economic Empowerment",
+          points: [
+            "Promote women-led cooperatives in sustainable farming and agro-processing industries.",
+            "Provide subsidies and low-interest loans to women entrepreneurs in climate-sensitive sectors."
+          ]
+        },
+        {
+          heading: "Education and Training",
+          points: [
+            "Offer specialized training programs in climate-resilient farming techniques and renewable energy.",
+            "Focus on improving women’s access to climate change education and participation in environmental advocacy."
+          ]
+        },
+        {
+          heading: "Economic Empowerment",
+          points: [
+            "Promote women-led cooperatives in sustainable farming and agro-processing industries.",
+            "Provide subsidies and low-interest loans to women entrepreneurs in climate-sensitive sectors."
+          ]
+        },
+        {
+          heading: "Economic Empowerment",
+          points: [
+            "Promote women-led cooperatives in sustainable farming and agro-processing industries.",
+            "Provide subsidies and low-interest loans to women entrepreneurs in climate-sensitive sectors."
+          ]
+        },
+        {
+          heading: "Economic Empowerment",
+          points: [
+            "Promote women-led cooperatives in sustainable farming and agro-processing industries.",
+            "Provide subsidies and low-interest loans to women entrepreneurs in climate-sensitive sectors."
+          ]
+        },
+      ]
+    }
+    
+  ];
+
   return (
     <div className="bg-[#121212]">
       <General
@@ -34,7 +109,19 @@ function Analysis() {
         {/* Conditionally rendering components based on the active tab */}
         {activeTab === "Community" && <CommunityContent />}
         {activeTab === "LiveSessions" && <LiveSessions />}
-        {activeTab === "Policies" && <Policies />}
+        {activeTab === "Policies" && (
+          <>
+            {policiesDataArray.map((policyData, index) => (
+              <Policiescard
+                key={index}
+                title={policyData.title}
+                organization={policyData.organization}
+                ministry={policyData.ministry}
+                policyFramework={policyData.policyFramework}
+              />
+            ))}
+          </>
+        )}
       </div>
     </div>
   );
@@ -121,58 +208,36 @@ function General({ title, activeTab, handleTabClick }) {
 
 // Placeholder content for Community tab
 function CommunityContent() {
-  return (
-    <div>
-      <Discussion />
-    </div>
-  );
+  return <div>Welcome to the Community section!</div>;
 }
 
 // Placeholder content for Live Sessions tab
 function LiveSessions() {
   return (
-    <div className="bg-[#121212] font-sans ">
-      <div className="h-72 w-full flex items-center justify-between overflow-hidden gap-5">
-        <SessionCards
-          title={"Preserving the Rhythm of the SunderBans:"}
-          text={"Where Every Step Keeps Tribal Traditions Alive!"}
-        />
-        <SessionCards
-          title={"Preserving the Rhythm of the SunderBans:"}
-          text={"Where Every Step Keeps Tribal Traditions Alive!"}
-        />
-        <SessionCards
-          title={"Preserving the Rhythm of the SunderBans:"}
-          text={"Where Every Step Keeps Tribal Traditions Alive!"}
-          isThird
-        />
-      </div>
+    <div className="bg-[#121212] font-sans m-9 ">
+      
+        <Sessionscheduler />
     </div>
   );
 }
+
 // Placeholder content for Policies tab
 function Policies() {
-  return <div>Welcome to the Policies section!</div>;
+  return <div>
+    <Policiescard />
+    </div>;
+  
 }
-function SessionCards({ img, title, text, isThird = false }) {
+
+function SessionCards({ img, title, text }) {
   return (
-    <div
-      className={`h-full rounded-xl relative flex-shrink-0 ${
-        isThird ? "w-[30%]" : "w-[35%]"
-      } overflow-hidden`}
-      style={isThird ? { marginRight: "0" } : { marginRight: "20px" }}
-    >
+    <div className="w-1/3 h-full rounded-xl">
       <img
-        src="src/assets/images/session1.png"
-        alt={title}
-        className="absolute inset-0 object-contain rounded-xl w-full h-full"
+        src="src/assets/images/session1.img"
+        alt=""
+        className="absolute object-fit"
       />
-      <div className="absolute bottom-0 left-0 p-4 z-10 w-full text-white">
-        <h2 className="text-xl font-bold ">{title}</h2>
-        <button className="mt-2 text-sm flex items-center gap-2">
-          {text} <span>→</span>
-        </button>
-      </div>
+      <div className="flex flex-col nset-0 z-10"></div>
     </div>
   );
 }
