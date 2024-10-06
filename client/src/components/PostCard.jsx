@@ -8,7 +8,7 @@ const PostCard = ({ post, userId, onCommentSubmit }) => {
   const handleLike = async () => {
     try {
       const response = await fetch(
-        `http://localhost:5000/posts/${post._id}/like`,
+        `https://nasa-space-apps-challenge-2024.onrender.com/${post._id}/like`,
         {
           method: "POST",
           headers: {

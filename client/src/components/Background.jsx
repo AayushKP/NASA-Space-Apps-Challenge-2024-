@@ -3,9 +3,9 @@ import React, { useState, useEffect } from "react";
 
 function Background({ heroText }) {
   const backgrounds = [
-    "src/assets/images/background1.png",
-    "src/assets/images/background2.png",
-    "src/assets/images/background3.png",
+    "/images/background1.png",
+    "/images/background2.png",
+    "/images/background3.png",
   ];
 
   // State to track the current active background index
@@ -28,7 +28,7 @@ function Background({ heroText }) {
       <div className="h-screen w-screen">
         <div className="w-full h-full">
           <img
-            src={backgrounds[activeBackground]} // Set the active background
+            src={backgrounds[activeBackground]}
             className="w-full h-full object-cover transition-opacity duration-1000 ease-in-out" // 1-second soft transition
             alt="background"
           />

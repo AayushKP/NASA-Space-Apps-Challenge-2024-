@@ -17,11 +17,11 @@ function Navbar() {
   };
 
   const buttons = [
-    { label: "Home", icon: "src/assets/images/icon-nav-1.png", key: "home" },
-    { label: "News", icon: "src/assets/images/icon-nav-2.png", key: "news" },
+    { label: "Home", icon: "/images/icon-nav-1.png", key: "home" },
+    { label: "News", icon: "/images/icon-nav-2.png", key: "news" },
     {
       label: "Analysis",
-      icon: "src/assets/images/icon-nav-3.png",
+      icon: "/images/icon-nav-3.png",
       key: "analysis",
     },
   ];
@@ -29,11 +29,7 @@ function Navbar() {
   return (
     <div className="mb-9 mt-9 mr-9 p-2 flex items-center h-20 justify-between relative">
       <div className="h-16 w-32">
-        <img
-          src="src/assets/images/Logo.png"
-          alt="Logo"
-          className="object-cover"
-        />
+        <img src="/images/Logo.png" alt="Logo" className="object-cover" />
       </div>
 
       <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 flex gap-6">
