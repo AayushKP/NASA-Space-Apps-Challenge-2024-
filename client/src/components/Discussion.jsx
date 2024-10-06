@@ -9,7 +9,9 @@ const Discussion = () => {
   // Fetch posts from the server
   useEffect(() => {
     const fetchPosts = async () => {
-      const res = await fetch("http://localhost:5000/posts");
+      const res = await fetch(
+        "https://nasa-space-apps-challenge-2024.onrender.com/posts"
+      );
       const data = await res.json();
       setPosts(data);
     };
@@ -23,10 +25,13 @@ const Discussion = () => {
     formData.append("content", newPost.content);
     if (newPost.media) formData.append("media", newPost.media);
 
-    const response = await fetch("http://localhost:5000/posts", {
-      method: "POST",
-      body: formData,
-    });
+    const response = await fetch(
+      "https://nasa-space-apps-challenge-2024.onrender.com/posts",
+      {
+        method: "POST",
+        body: formData,
+      }
+    );
 
     const postData = await response.json();
     setPosts([postData, ...posts]); // Add the new post to the existing posts
@@ -45,7 +50,7 @@ const Discussion = () => {
   // Handle comment update
   const handleCommentSubmit = async (postId, comment) => {
     const response = await fetch(
-      `http://localhost:5000/posts/${postId}/comment`,
+      `https://nasa-space-apps-challenge-2024.onrender.com/posts/${postId}/comment`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },

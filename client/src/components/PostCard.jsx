@@ -51,14 +51,14 @@ const PostCard = ({ post, userId, onCommentSubmit }) => {
         <div className="mb-4">
           {post.media.type === "image" ? (
             <img
-              src={`http://localhost:5000${post.media.url}`}
+              src={`https://nasa-space-apps-challenge-2024.onrender.com${post.media.url}`}
               alt="Post Media"
               className="rounded-lg w-full h-auto object-cover"
             />
           ) : (
             <video
               controls
-              src={`http://localhost:5000${post.media.url}`}
+              src={`https://nasa-space-apps-challenge-2024.onrender.com${post.media.url}`}
               className="rounded-lg w-full h-auto object-cover"
             />
           )}
