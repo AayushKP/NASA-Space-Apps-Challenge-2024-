@@ -9,7 +9,7 @@ const News = () => {
         "Gender Inequality and Climate Change: A Toxic Cocktail in the Sundarbans",
       description:
         "The Sundarbans, a delicate and ecologically significant region in South Asia, is facing the dual challenge of climate change and entrenched gender inequality. Rising sea levels, frequent cyclones, and severe flooding have caused widespread destruction of livelihoods and ecosystems, disproportionately affecting women in the region. Women in the Sundarbans, who traditionally depend on natural resources like farming and fishing for their sustenance, are now left with fewer opportunities as these resources dwindle. Yet, despite being the most impacted by climate change, women are often excluded from decision-making processes regarding climate adaptation and disaster management. This marginalization exacerbates their vulnerability, trapping them in a cycle of poverty and insecurity.",
-      imageUrl: "src/assets/images/article1.png",
+      imageUrl: "/images/article1.png",
       altText: "Person sitting by water in the Sundarbans",
     },
     {
