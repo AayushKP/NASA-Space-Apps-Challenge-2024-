@@ -126,28 +126,48 @@ function CommunityContent() {
 // Placeholder content for Live Sessions tab
 function LiveSessions() {
   return (
-    <div className="bg-[#121212] font-sans m-9 ">
-      <div className=" h-96 w-full border border-red-800">
-        <SessionCards />
+    <div className="bg-[#121212] font-sans ">
+      <div className="h-72 w-full flex items-center justify-between overflow-hidden gap-5">
+        <SessionCards
+          title={"Preserving the Rhythm of the SunderBans:"}
+          text={"Where Every Step Keeps Tribal Traditions Alive!"}
+        />
+        <SessionCards
+          title={"Preserving the Rhythm of the SunderBans:"}
+          text={"Where Every Step Keeps Tribal Traditions Alive!"}
+        />
+        <SessionCards
+          title={"Preserving the Rhythm of the SunderBans:"}
+          text={"Where Every Step Keeps Tribal Traditions Alive!"}
+          isThird
+        />
       </div>
     </div>
   );
 }
-
 // Placeholder content for Policies tab
 function Policies() {
   return <div>Welcome to the Policies section!</div>;
 }
-
-function SessionCards({ img, title, text }) {
+function SessionCards({ img, title, text, isThird = false }) {
   return (
-    <div className="w-1/3 h-full rounded-xl">
+    <div
+      className={`h-full rounded-xl relative flex-shrink-0 ${
+        isThird ? "w-[30%]" : "w-[35%]"
+      } overflow-hidden`}
+      style={isThird ? { marginRight: "0" } : { marginRight: "20px" }}
+    >
       <img
-        src="src/assets/images/session1.img"
-        alt=""
-        className="absolute object-fit"
+        src="src/assets/images/session1.png"
+        alt={title}
+        className="absolute inset-0 object-contain rounded-xl w-full h-full"
       />
-      <div className="flex flex-col nset-0 z-10"></div>
+      <div className="absolute bottom-0 left-0 p-4 z-10 w-full text-white">
+        <h2 className="text-xl font-bold ">{title}</h2>
+        <button className="mt-2 text-sm flex items-center gap-2">
+          {text} <span>→</span>
+        </button>
+      </div>
     </div>
   );
 }
