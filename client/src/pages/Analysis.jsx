@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { IoHomeOutline } from "react-icons/io5";
 import Background from "../components/Background";
+import Policiescard from "../components/Policiescard";
+import Sessionscheduler from "../components/Sessionscheduler";
 
 function Analysis() {
   const [activeTab, setActiveTab] = useState("Community");
@@ -22,6 +24,80 @@ function Analysis() {
     }
   };
 
+  const policiesDataArray = [
+    {
+      title: "Addressing Climate Impact on Gender Inequality in the Sundarbans",
+      organization: "SCGAN",
+      ministry: "MoEFCC",
+      policyFramework: [
+        {
+          heading: "Inclusive Climate Adaptation Planning",
+          points: [
+            "Ensure the active participation of women in local decision-making bodies related to climate adaptation and disaster management.",
+            "Provide gender-balanced representation in environmental councils and community planning committees to ensure diverse perspectives in tackling climate change impacts."
+          ]
+        },
+        {
+          heading: "Empowerment Through Education and Training",
+          points: [
+            "Implement training programs specifically designed for women in the Sundarbans, focusing on sustainable agriculture, eco-friendly livelihoods, and disaster preparedness.",
+            "Encourage skill development in alternative income-generating activities like sustainable fishing, handicrafts, or eco-tourism for women affected by climate hazards."
+          ]
+        },
+        {
+          heading: "Resource Accessibility and Ownership Rights",
+          points: [
+            "Promote policies ensuring women have equal access to natural resources (e.g., land, water) and property rights to enhance their resilience to climate change impacts.",
+            "Facilitate women's participation in community-based natural resource management initiatives."
+          ]
+        }
+      ]
+    },
+    {
+      title: "Addressing Climate Impact on Gender Inequality in the Sundarbans",
+      organization: "GENDREC",
+      ministry: "MoEFCC",
+      policyFramework: [
+        {
+          heading: "Economic Empowerment",
+          points: [
+            "Promote women-led cooperatives in sustainable farming and agro-processing industries.",
+            "Provide subsidies and low-interest loans to women entrepreneurs in climate-sensitive sectors."
+          ]
+        },
+        {
+          heading: "Education and Training",
+          points: [
+            "Offer specialized training programs in climate-resilient farming techniques and renewable energy.",
+            "Focus on improving women’s access to climate change education and participation in environmental advocacy."
+          ]
+        },
+        {
+          heading: "Economic Empowerment",
+          points: [
+            "Promote women-led cooperatives in sustainable farming and agro-processing industries.",
+            "Provide subsidies and low-interest loans to women entrepreneurs in climate-sensitive sectors."
+          ]
+        },
+        {
+          heading: "Economic Empowerment",
+          points: [
+            "Promote women-led cooperatives in sustainable farming and agro-processing industries.",
+            "Provide subsidies and low-interest loans to women entrepreneurs in climate-sensitive sectors."
+          ]
+        },
+        {
+          heading: "Economic Empowerment",
+          points: [
+            "Promote women-led cooperatives in sustainable farming and agro-processing industries.",
+            "Provide subsidies and low-interest loans to women entrepreneurs in climate-sensitive sectors."
+          ]
+        },
+      ]
+    }
+    
+  ];
+
   return (
     <div className="bg-[#121212]">
       <General
@@ -33,7 +109,19 @@ function Analysis() {
         {/* Conditionally rendering components based on the active tab */}
         {activeTab === "Community" && <CommunityContent />}
         {activeTab === "LiveSessions" && <LiveSessions />}
-        {activeTab === "Policies" && <Policies />}
+        {activeTab === "Policies" && (
+          <>
+            {policiesDataArray.map((policyData, index) => (
+              <Policiescard
+                key={index}
+                title={policyData.title}
+                organization={policyData.organization}
+                ministry={policyData.ministry}
+                policyFramework={policyData.policyFramework}
+              />
+            ))}
+          </>
+        )}
       </div>
     </div>
   );
@@ -127,16 +215,18 @@ function CommunityContent() {
 function LiveSessions() {
   return (
     <div className="bg-[#121212] font-sans m-9 ">
-      <div className=" h-96 w-full border border-red-800">
-        <SessionCards />
-      </div>
+      
+        <Sessionscheduler />
     </div>
   );
 }
 
 // Placeholder content for Policies tab
 function Policies() {
-  return <div>Welcome to the Policies section!</div>;
+  return <div>
+    <Policiescard />
+    </div>;
+  
 }
 
 function SessionCards({ img, title, text }) {
