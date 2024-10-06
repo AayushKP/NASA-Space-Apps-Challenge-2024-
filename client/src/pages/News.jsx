@@ -17,7 +17,7 @@ const News = () => {
         "Mangrove Loss Exacerbates Climate Change Impacts in the Sundarbans",
       description:
         "The Sundarbans, a UNESCO World Heritage site, is facing a critical decline in mangrove trees. This loss of vegetation has far-reaching consequences for both the environment and the communities that rely on this ecosystem. Mangroves act as natural barriers, protecting coastal areas from storm surges, erosion, and saltwater intrusion. They also serve as important nurseries for fish and other marine life.",
-      imageUrl: "src/assets/images/article2.png",
+      imageUrl: "/images/article2.png",
       altText: "Mangrove forest in the Sundarbans",
     },
     {
@@ -25,7 +25,7 @@ const News = () => {
         "Mangrove Loss Exacerbates Climate Change Impacts in the Sundarbans",
       description:
         "The Sundarbans, a UNESCO World Heritage site, is facing a critical decline in mangrove trees. This loss of vegetation has far-reaching consequences for both the environment and the communities that rely on this ecosystem. Mangroves act as natural barriers, protecting coastal areas from storm surges, erosion, and saltwater intrusion. They also serve as important nurseries for fish and other marine life.",
-      imageUrl: "src/assets/images/article3.png",
+      imageUrl: "/images/article3.png",
       altText: "Mangrove forest in the Sundarbans",
     },
     {
@@ -33,7 +33,7 @@ const News = () => {
         "Mangrove Loss Exacerbates Climate Change Impacts in the Sundarbans",
       description:
         "The Sundarbans, a UNESCO World Heritage site, is facing a critical decline in mangrove trees. This loss of vegetation has far-reaching consequences for both the environment and the communities that rely on this ecosystem. Mangroves act as natural barriers, protecting coastal areas from storm surges, erosion, and saltwater intrusion. They also serve as important nurseries for fish and other marine life.",
-      imageUrl: "src/assets/images/article4.png",
+      imageUrl: "/images/article4.png",
       altText: "Mangrove forest in the Sundarbans",
     },
   ];
@@ -60,10 +60,10 @@ const News = () => {
         ))}
       </div>
       <div className="flex justify-center items-center">
-        <img src="src/assets/images/dataImg.png" alt="" className="" />
+        <img src="/images/dataImg.png" alt="" className="" />
       </div>
       <div className="flex justify-center items-center mt-3 mb-9">
-        <img src="src/assets/images/dataImg2.png" alt="" className="" />
+        <img src="/images/dataImg2.png" alt="" className="" />
       </div>
     </div>
   );

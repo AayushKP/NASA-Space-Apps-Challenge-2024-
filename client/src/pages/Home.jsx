@@ -15,9 +15,6 @@ function Home() {
         />
       </div>
 
-      
-      
-
       {/* Recent Section */}
       <div className="flex flex-col ml-9 text-white text-3xl">
         <div>Recent</div>
@@ -28,7 +25,7 @@ function Home() {
       <div className="flex flex-col md:flex-row justify-start m-9 gap-16">
         <div className="w-full md:w-5/12 h-96 relative overflow-hidden">
           <img
-            src="src/assets/images/homeImg.png"
+            src="/images/homeImg.png"
             alt="Home Image"
             className="w-full h-full object-cover rounded-xl"
           />
@@ -81,7 +78,7 @@ function Home() {
       {/* Footer Section */}
       <div className="m-9">
         <img
-          src="src/assets/images/footerImg.png"
+          src="/images/footerImg.png"
           alt="Footer Image"
           className="w-full h-auto object-cover"
         />
