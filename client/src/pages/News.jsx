@@ -1,6 +1,7 @@
 import React, { useState } from "react"; // Import useState
 import Background from "../components/Background";
 import Modal from "../components/Modal"; // Import Modal component
+import Data1 from "../components/Data1";
 
 const News = () => {
   const [isModalOpen, setIsModalOpen] = useState(false); // State for modal
@@ -82,7 +83,7 @@ const News = () => {
         ))}
       </div>
       <div className="flex justify-center items-center">
-        <img src="/images/dataImg.png" alt="" className="" />
+        <Data1 />
       </div>
       <div className="flex justify-center items-center mt-3 mb-9">
         <img src="/images/dataImg2.png" alt="" className="" />
