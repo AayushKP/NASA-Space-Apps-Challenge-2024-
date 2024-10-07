@@ -171,7 +171,7 @@ function General({ title, activeTab, handleTabClick }) {
           </div>
         </div>
 
-        <div className="flex items-center justify-end mr-9 w-auto p-3 h-auto overflow-hidden">
+        <div className="flex items-center mr-9 w-auto p-3 h-auto overflow-hidden">
           <div className="text-9xl font-semibold text-white">
             <span className="text-[#CDDC6E]">{title.first}</span> {title.second}
           </div>
